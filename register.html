@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GST Registration Practice | KCST GST Learn</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#fff;
+    color:#111827;
+    font-size:14px;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    height:58px;
+    border-bottom:1px solid #e5e7eb;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 25px;
+
+    background:#fff;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    text-decoration:none;
+    color:#111827;
+}
+
+.logo-icon{
+    width:36px;
+    height:36px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:9px;
+
+    font-size:11px;
+    font-weight:bold;
+}
+
+.logo-text{
+    font-size:16px;
+    font-weight:bold;
+}
+
+.home-link{
+    text-decoration:none;
+    color:#475569;
+    font-size:13px;
+}
+
+.home-link:hover{
+    color:#2563eb;
+}
+
+
+/* ================= PRACTICE NOTICE ================= */
+
+.practice-notice{
+    max-width:520px;
+
+    margin:12px auto 0;
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    color:#1e40af;
+
+    padding:9px 12px;
+
+    font-size:11px;
+
+    text-align:center;
+
+    border-radius:4px;
+}
+
+
+/* ================= MAIN ================= */
+
+.main{
+    width:486px;
+
+    max-width:calc(100% - 30px);
+
+    margin:8px auto 40px;
+}
+
+
+/* ================= STEPS ================= */
+
+.steps{
+    width:210px;
+
+    margin:0 auto 16px;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:space-between;
+}
+
+.steps:before{
+    content:"";
+
+    position:absolute;
+
+    top:17px;
+
+    left:20px;
+    right:20px;
+
+    height:2px;
+
+    background:#999;
+
+    z-index:0;
+}
+
+.step{
+    position:relative;
+
+    z-index:1;
+
+    text-align:center;
+
+    width:80px;
+
+    font-size:11px;
+
+    color:#666;
+}
+
+.step-circle{
+    width:34px;
+    height:34px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#777;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-weight:bold;
+
+    font-size:12px;
+}
+
+.step.active .step-circle{
+    background:#f5a000;
+}
+
+.step.completed .step-circle{
+    background:#16a34a;
+}
+
+.step.active .step-label{
+    color:#f08a00;
+}
+
+.step.completed .step-label{
+    color:#16a34a;
+}
+
+.step-label{
+    margin-top:4px;
+
+    white-space:nowrap;
+}
+
+
+/* ================= TITLE ================= */
+
+.title-row{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    border-bottom:1px solid #ddd;
+
+    padding-bottom:7px;
+
+    margin-bottom:8px;
+}
+
+.title{
+    font-size:18px;
+
+    font-weight:400;
+
+    color:#111827;
+}
+
+.mandatory{
+    font-size:12px;
+
+    color:#111827;
+
+    margin-bottom:1px;
+}
+
+.mandatory span{
+    color:red;
+
+    font-size:16px;
+
+    font-weight:bold;
+}
+
+
+/* ================= REGISTRATION TYPE ================= */
+
+.registration-type{
+    display:flex;
+
+    gap:15px;
+
+    align-items:center;
+
+    margin:14px 0 13px;
+}
+
+.radio-option{
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    font-size:13px;
+
+    cursor:pointer;
+}
+
+.radio{
+    width:18px;
+    height:18px;
+
+    border:1px solid #ccc;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+}
+
+.radio.selected:after{
+    content:"";
+
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:#4caf00;
+}
+
+
+/* ================= FORM ================= */
+
+.form-group{
+    margin-bottom:10px;
+}
+
+.form-group label{
+    display:block;
+
+    margin-bottom:5px;
+
+    font-size:13px;
+
+    color:#111827;
+}
+
+.required{
+    color:red;
+
+    font-weight:bold;
+}
+
+
+/* ================= INPUT ================= */
+
+.input,
+.select{
+    width:100%;
+
+    height:32px;
+
+    border:1px solid #c7c7c7;
+
+    background:#fff;
+
+    padding:0 12px;
+
+    font-size:13px;
+
+    color:#374151;
+
+    outline:none;
+
+    border-radius:0;
+}
+
+.input:focus,
+.select:focus{
+    border-color:#5579a8;
+
+    box-shadow:
+        0 0 2px rgba(37,99,235,.25);
+}
+
+.input::placeholder{
+    color:#999;
+}
+
+.select{
+    cursor:pointer;
+}
+
+
+/* ================= EMAIL ================= */
+
+.input-with-icon{
+    display:flex;
+
+    width:100%;
+}
+
+.email-icon{
+    width:34px;
+    height:32px;
+
+    border:1px solid #c7c7c7;
+
+    border-right:0;
+
+    background:#eee;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:13px;
+}
+
+.input-with-icon .input{
+    flex:1;
+}
+
+
+/* ================= MOBILE ================= */
+
+.mobile-row{
+    display:flex;
+
+    width:100%;
+}
+
+.country-code{
+    width:48px;
+    height:32px;
+
+    border:1px solid #c7c7c7;
+
+    background:#eee;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#555;
+
+    font-size:12px;
+}
+
+.mobile-row .input{
+    flex:1;
+}
+
+
+/* ================= INFO ================= */
+
+.info{
+    margin-top:4px;
+
+    color:#475569;
+
+    font-size:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+}
+
+.info-icon{
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:#6b7280;
+
+    color:white;
+
+    font-size:8px;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-weight:bold;
+}
+
+
+/* ================= PROCEED ================= */
+
+.proceed{
+    width:100%;
+
+    height:32px;
+
+    margin-top:18px;
+
+    border:0;
+
+    background:#31598e;
+
+    color:#fff;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.proceed:hover{
+    background:#244b7d;
+}
+
+
+/* ================= OTP SCREEN ================= */
+
+.otp-screen{
+    display:none;
+
+    padding-top:5px;
+}
+
+.otp-title{
+    font-size:18px;
+
+    padding-bottom:8px;
+
+    border-bottom:1px solid #ddd;
+
+    margin-bottom:20px;
+}
+
+.otp-box{
+    border:1px solid #ddd;
+
+    padding:20px;
+
+    background:#fafafa;
+
+    text-align:center;
+}
+
+.otp-icon{
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto 12px;
+
+    font-size:25px;
+}
+
+.otp-box h3{
+    font-size:17px;
+
+    font-weight:400;
+
+    margin-bottom:7px;
+}
+
+.otp-box p{
+    color:#64748b;
+
+    font-size:12px;
+
+    line-height:1.6;
+
+    margin-bottom:15px;
+}
+
+
+/* ================= GENERATED OTP ================= */
+
+.generated-otp{
+
+    background:#fff7ed;
+
+    border:1px dashed #f59e0b;
+
+    color:#9a3412;
+
+    padding:12px;
+
+    margin:10px auto 15px;
+
+    font-size:12px;
+
+    max-width:260px;
+}
+
+.generated-otp strong{
+
+    display:block;
+
+    font-size:25px;
+
+    letter-spacing:6px;
+
+    margin-top:5px;
+
+    color:#d97706;
+}
+
+
+/* ================= OTP INPUT ================= */
+
+.otp-input{
+
+    width:190px;
+
+    height:40px;
+
+    border:1px solid #bbb;
+
+    text-align:center;
+
+    font-size:20px;
+
+    letter-spacing:7px;
+
+    outline:none;
+
+    background:white;
+}
+
+.otp-input:focus{
+    border-color:#31598e;
+
+    box-shadow:
+        0 0 3px rgba(49,89,142,.3);
+}
+
+
+/* ================= VERIFY ================= */
+
+.verify{
+
+    display:block;
+
+    width:190px;
+
+    height:36px;
+
+    margin:15px auto 10px;
+
+    border:0;
+
+    background:#31598e;
+
+    color:white;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.verify:hover{
+    background:#244b7d;
+}
+
+.back{
+
+    border:0;
+
+    background:none;
+
+    color:#2563eb;
+
+    font-size:12px;
+
+    cursor:pointer;
+}
+
+
+/* ================= SUCCESS ================= */
+
+.success-screen{
+    display:none;
+
+    padding-top:5px;
+}
+
+.success-icon{
+
+    width:65px;
+    height:65px;
+
+    border-radius:50%;
+
+    background:#dcfce7;
+
+    color:#16a34a;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin:10px auto 15px;
+
+    font-size:32px;
+
+    font-weight:bold;
+}
+
+.success-title{
+
+    text-align:center;
+
+    font-size:19px;
+
+    font-weight:400;
+
+    margin-bottom:18px;
+}
+
+.success-message{
+
+    background:#f8fafc;
+
+    border:1px solid #dbe2ea;
+
+    padding:18px;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+    color:#374151;
+}
+
+.trn-box{
+
+    background:#fff;
+
+    border:1px solid #cbd5e1;
+
+    padding:13px;
+
+    margin:15px 0;
+
+    text-align:center;
+}
+
+.trn-label{
+
+    display:block;
+
+    font-size:11px;
+
+    color:#64748b;
+
+    margin-bottom:5px;
+}
+
+.trn-number{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#1e3a8a;
+
+    letter-spacing:1px;
+
+    word-break:break-all;
+}
+
+.deadline{
+
+    background:#fff7ed;
+
+    border:1px solid #fed7aa;
+
+    padding:10px;
+
+    margin-top:12px;
+
+    color:#9a3412;
+
+    text-align:center;
+
+    font-size:12px;
+}
+
+.finish-button{
+
+    width:100%;
+
+    height:34px;
+
+    margin-top:18px;
+
+    border:0;
+
+    background:#31598e;
+
+    color:#fff;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+
+/* ================= MESSAGE ================= */
+
+.message{
+
+    display:none;
+
+    padding:9px;
+
+    margin-top:10px;
+
+    font-size:12px;
+
+    text-align:center;
+
+    border:1px solid #ddd;
+}
+
+.message.error{
+
+    display:block;
+
+    background:#fff1f2;
+
+    border-color:#fecdd3;
+
+    color:#be123c;
+}
+
+.message.success{
+
+    display:block;
+
+    background:#f0fdf4;
+
+    border-color:#bbf7d0;
+
+    color:#15803d;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+    text-align:center;
+
+    color:#999;
+
+    font-size:10px;
+
+    margin:30px 0;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:550px){
+
+    .header{
+        padding:0 15px;
+    }
+
+    .home-link{
+        font-size:11px;
+    }
+
+    .main{
+        width:100%;
+
+        max-width:calc(100% - 25px);
+    }
+
+    .title-row{
+        align-items:flex-start;
+
+        gap:10px;
+    }
+
+    .mandatory{
+        white-space:nowrap;
+    }
+
+    .registration-type{
+        flex-wrap:wrap;
+
+        gap:10px;
+    }
+
+    .trn-number{
+        font-size:16px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-icon">
+            GST
+        </div>
+
+        <div class="logo-text">
+            KCST GST Learn
+        </div>
+
+    </a>
+
+    <a
+        href="index.html"
+        class="home-link"
+    >
+        ← Home
+    </a>
+
+</header>
+
+
+<!-- ================= NOTICE ================= -->
+
+<div class="practice-notice">
+
+    🎓 <b>Learning Mode:</b>
+    This is a GST registration practice simulation.
+    It is not an official GST portal.
+
+</div>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+
+    <!-- ================= STEPS ================= -->
+
+    <div class="steps">
+
+        <div
+            id="step1"
+            class="step active"
+        >
+
+            <div class="step-circle">
+                1
+            </div>
+
+            <div class="step-label">
+                User Credentials
+            </div>
+
+        </div>
+
+
+        <div
+            id="step2"
+            class="step"
+        >
+
+            <div class="step-circle">
+                2
+            </div>
+
+            <div class="step-label">
+                OTP Verification
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= REGISTRATION SCREEN ================= -->
+
+    <div id="registrationScreen">
+
+
+        <div class="title-row">
+
+            <div class="title">
+                New Registration
+            </div>
+
+            <div class="mandatory">
+                <span>•</span>
+                indicates mandatory fields
+            </div>
+
+        </div>
+
+
+        <!-- REGISTRATION TYPE -->
+
+        <div class="registration-type">
+
+            <div
+                class="radio-option"
+                onclick="selectRegistration('new')"
+            >
+
+                <div
+                    id="newRadio"
+                    class="radio selected"
+                ></div>
+
+                New Registration
+
+            </div>
+
+
+            <div
+                class="radio-option"
+                onclick="selectRegistration('trn')"
+            >
+
+                <div
+                    id="trnRadio"
+                    class="radio"
+                ></div>
+
+                Temporary Reference Number (TRN)
+
+            </div>
+
+        </div>
+
+
+        <form
+            id="gstForm"
+            onsubmit="proceedForm(event)"
+        >
+
+
+            <!-- I AM A -->
+
+            <div class="form-group">
+
+                <label>
+                    I am a<span class="required">*</span>
+                </label>
+
+                <select
+                    id="personType"
+                    class="select"
+                    required
+                >
+
+                    <option value="">
+                        Select
+                    </option>
+
+                    <option>
+                        Taxpayer
+                    </option>
+
+                    <option>
+                        Tax Deductor
+                    </option>
+
+                    <option>
+                        Tax Collector
+                    </option>
+
+                    <option>
+                        GST Practitioner
+                    </option>
+
+                    <option>
+                        Non-Resident Taxable Person
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- STATE -->
+
+            <div class="form-group">
+
+                <label>
+                    State / UT<span class="required">*</span>
+                </label>
+
+                <select
+                    id="state"
+                    class="select"
+                    required
+                    onchange="loadDistricts()"
+                >
+
+                    <option value="">
+                        Select
+                    </option>
+
+                    <option value="kerala">
+                        Kerala
+                    </option>
+
+                    <option value="tamilnadu">
+                        Tamil Nadu
+                    </option>
+
+                    <option value="karnataka">
+                        Karnataka
+                    </option>
+
+                    <option value="maharashtra">
+                        Maharashtra
+                    </option>
+
+                    <option value="delhi">
+                        Delhi
+                    </option>
+
+                    <option value="other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- DISTRICT -->
+
+            <div class="form-group">
+
+                <label>
+                    District
+                </label>
+
+                <select
+                    id="district"
+                    class="select"
+                >
+
+                    <option value="">
+                        Select
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- BUSINESS NAME -->
+
+            <div class="form-group">
+
+                <label>
+                    Legal Name of the Business
+                    (As mentioned in PAN)
+                    <span class="required">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="businessName"
+                    class="input"
+                    placeholder="Enter Legal Name of Business"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PAN -->
+
+            <div class="form-group">
+
+                <label>
+                    Permanent Account Number (PAN)
+                    <span class="required">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="pan"
+                    class="input"
+                    placeholder="Enter Permanent Account Number (PAN)"
+                    maxlength="10"
+                    required
+                    oninput="formatPAN(this)"
+                >
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label>
+                    Email Address
+                    <span class="required">*</span>
+                </label>
+
+                <div class="input-with-icon">
+
+                    <div class="email-icon">
+                        ✉
+                    </div>
+
+                    <input
+                        type="email"
+                        id="email"
+                        class="input"
+                        placeholder="Enter Email Address"
+                        required
+                    >
+
+                </div>
+
+                <div class="info">
+
+                    <span class="info-icon">
+                        i
+                    </span>
+
+                    OTP will be simulated for this learning exercise
+
+                </div>
+
+            </div>
+
+
+            <!-- MOBILE -->
+
+            <div class="form-group">
+
+                <label>
+                    Mobile Number
+                    <span class="required">*</span>
+                </label>
+
+                <div class="mobile-row">
+
+                    <div class="country-code">
+                        +91
+                    </div>
+
+                    <input
+                        type="tel"
+                        id="mobile"
+                        class="input"
+                        placeholder="Enter Mobile Number"
+                        maxlength="10"
+                        required
+                        oninput="numbersOnly(this)"
+                    >
+
+                </div>
+
+                <div class="info">
+
+                    <span class="info-icon">
+                        i
+                    </span>
+
+                    OTP verification is simulated
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="message"
+                class="message"
+            ></div>
+
+
+            <!-- PROCEED -->
+
+            <button
+                type="submit"
+                class="proceed"
+            >
+                PROCEED
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- ================= OTP SCREEN ================= -->
+
+    <div
+        id="otpScreen"
+        class="otp-screen"
+    >
+
+        <div class="otp-title">
+            OTP Verification
+        </div>
+
+
+        <div class="otp-box">
+
+            <div class="otp-icon">
+                🔐
+            </div>
+
+            <h3>
+                Verify Your Registration
+            </h3>
+
+            <p>
+                A 6-digit OTP has been generated for this
+                GST learning simulation.
+            </p>
+
+
+            <!-- RANDOM OTP -->
+
+            <div class="generated-otp">
+
+                Your Demo OTP
+
+                <strong id="generatedOTP">
+                    000000
+                </strong>
+
+            </div>
+
+
+            <input
+                type="text"
+                id="otp"
+                class="otp-input"
+                maxlength="6"
+                placeholder="------"
+                oninput="numbersOnly(this)"
+            >
+
+
+            <button
+                class="verify"
+                onclick="verifyOTP()"
+            >
+                VERIFY OTP
+            </button>
+
+
+            <button
+                class="back"
+                onclick="goBack()"
+            >
+                ← Back to Registration
+            </button>
+
+
+            <div
+                id="otpMessage"
+                class="message"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= SUCCESS SCREEN ================= -->
+
+    <div
+        id="successScreen"
+        class="success-screen"
+    >
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+
+        <div class="success-title">
+
+            Part A Registration Submitted Successfully
+
+        </div>
+
+
+        <div class="success-message">
+
+            You have successfully submitted Part A of the
+            registration process.
+
+
+            <div class="trn-box">
+
+                <span class="trn-label">
+                    Your Temporary Reference Number (TRN)
+                </span>
+
+                <div
+                    id="trnNumber"
+                    class="trn-number"
+                >
+                    000000000000TRN
+                </div>
+
+            </div>
+
+
+            Using this TRN you can access the application
+            from <b>My Saved Applications</b> and continue
+            your GST registration learning exercise.
+
+
+            <div class="deadline">
+
+                Part B of the application form needs to be
+                completed within <b>15 days</b>,
+
+                i.e. by
+                <b id="deadlineDate">
+                    00/00/0000
+                </b>
+
+                using this TRN.
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="finish-button"
+            onclick="goHome()"
+        >
+            CONTINUE
+        </button>
+
+    </div>
+
+
+</main>
+
+
+<div class="footer">
+
+    KCST GST Learn © 2026
+
+</div>
+
+
+<script>
+
+
+/* ================= VARIABLES ================= */
+
+let generatedOTP = "";
+
+let generatedTRN = "";
+
+
+/* ================= REGISTRATION TYPE ================= */
+
+function selectRegistration(type){
+
+    const newRadio =
+        document.getElementById("newRadio");
+
+    const trnRadio =
+        document.getElementById("trnRadio");
+
+
+    if(type === "new"){
+
+        newRadio.classList.add("selected");
+
+        trnRadio.classList.remove("selected");
+
+    }
+    else{
+
+        newRadio.classList.remove("selected");
+
+        trnRadio.classList.add("selected");
+
+        alert(
+            "TRN learning module will be available soon."
+        );
+
+    }
+
+}
+
+
+/* ================= DISTRICTS ================= */
+
+function loadDistricts(){
+
+    const state =
+        document.getElementById("state").value;
+
+    const district =
+        document.getElementById("district");
+
+
+    district.innerHTML =
+        '<option value="">Select</option>';
+
+
+    const districts = {
+
+        kerala:[
+            "Alappuzha",
+            "Ernakulam",
+            "Idukki",
+            "Kannur",
+            "Kasaragod",
+            "Kollam",
+            "Kottayam",
+            "Kozhikode",
+            "Malappuram",
+            "Palakkad",
+            "Pathanamthitta",
+            "Thiruvananthapuram",
+            "Thrissur",
+            "Wayanad"
+        ],
+
+        tamilnadu:[
+            "Chennai",
+            "Coimbatore",
+            "Madurai",
+            "Salem",
+            "Tiruchirappalli",
+            "Tiruppur"
+        ],
+
+        karnataka:[
+            "Bengaluru Urban",
+            "Mysuru",
+            "Mangaluru",
+            "Belagavi",
+            "Hubballi"
+        ],
+
+        maharashtra:[
+            "Mumbai",
+            "Pune",
+            "Nagpur",
+            "Nashik",
+            "Thane"
+        ],
+
+        delhi:[
+            "Central Delhi",
+            "East Delhi",
+            "New Delhi",
+            "North Delhi",
+            "South Delhi"
+        ]
+
+    };
+
+
+    if(districts[state]){
+
+        districts[state].forEach(function(name){
+
+            const option =
+                document.createElement("option");
+
+            option.value = name;
+
+            option.textContent = name;
+
+            district.appendChild(option);
+
+        });
+
+    }
+
+}
+
+
+/* ================= PAN ================= */
+
+function formatPAN(input){
+
+    input.value =
+        input.value
+        .toUpperCase()
+        .replace(/[^A-Z0-9]/g,"")
+        .substring(0,10);
+
+}
+
+
+/* ================= NUMBERS ONLY ================= */
+
+function numbersOnly(input){
+
+    input.value =
+        input.value
+        .replace(/[^0-9]/g,"");
+
+}
+
+
+/* ================= RANDOM OTP ================= */
+
+function generateOTP(){
+
+    return Math.floor(
+        100000 +
+        Math.random() * 900000
+    ).toString();
+
+}
+
+
+/* ================= RANDOM TRN ================= */
+
+function generateTRN(){
+
+    let number = "";
+
+    for(let i = 0; i < 12; i++){
+
+        number +=
+            Math.floor(
+                Math.random() * 10
+            );
+
+    }
+
+    return number + "TRN";
+
+}
+
+
+/* ================= PROCEED ================= */
+
+function proceedForm(event){
+
+    event.preventDefault();
+
+
+    const pan =
+        document.getElementById("pan").value;
+
+    const mobile =
+        document.getElementById("mobile").value;
+
+
+    const message =
+        document.getElementById("message");
+
+
+    message.className =
+        "message";
+
+
+    /* PAN VALIDATION */
+
+    if(
+        !/^[A-Z]{5}[0-9]{4}[A-Z]$/.test(pan)
+    ){
+
+        message.className =
+            "message error";
+
+        message.textContent =
+            "Please enter a valid PAN format.";
+
+        return;
+
+    }
+
+
+    /* MOBILE VALIDATION */
+
+    if(
+        !/^[0-9]{10}$/.test(mobile)
+    ){
+
+        message.className =
+            "message error";
+
+        message.textContent =
+            "Please enter a valid 10-digit mobile number.";
+
+        return;
+
+    }
+
+
+    /* GENERATE OTP */
+
+    generatedOTP =
+        generateOTP();
+
+
+    document.getElementById(
+        "generatedOTP"
+    ).textContent =
+        generatedOTP;
+
+
+    /* SHOW OTP SCREEN */
+
+    document.getElementById(
+        "registrationScreen"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "otpScreen"
+    ).style.display =
+        "block";
+
+
+    /* UPDATE STEPS */
+
+    document.getElementById(
+        "step1"
+    ).classList.remove("active");
+
+
+    document.getElementById(
+        "step1"
+    ).classList.add("completed");
+
+
+    document.getElementById(
+        "step2"
+    ).classList.add("active");
+
+}
+
+
+/* ================= VERIFY OTP ================= */
+
+function verifyOTP(){
+
+    const enteredOTP =
+        document.getElementById("otp").value;
+
+    const message =
+        document.getElementById("otpMessage");
+
+
+    message.className =
+        "message";
+
+
+    if(enteredOTP.length !== 6){
+
+        message.className =
+            "message error";
+
+        message.textContent =
+            "Please enter the 6-digit OTP.";
+
+        return;
+
+    }
+
+
+    if(enteredOTP !== generatedOTP){
+
+        message.className =
+            "message error";
+
+        message.textContent =
+            "Incorrect OTP. Please enter the generated OTP.";
+
+        return;
+
+    }
+
+
+    /* OTP CORRECT */
+
+    generatedTRN =
+        generateTRN();
+
+
+    document.getElementById(
+        "trnNumber"
+    ).textContent =
+        generatedTRN;
+
+
+    /* CALCULATE 15 DAYS */
+
+    const deadline =
+        new Date();
+
+    deadline.setDate(
+        deadline.getDate() + 15
+    );
+
+
+    document.getElementById(
+        "deadlineDate"
+    ).textContent =
+        formatDate(deadline);
+
+
+    /* HIDE OTP */
+
+    document.getElementById(
+        "otpScreen"
+    ).style.display =
+        "none";
+
+
+    /* SHOW SUCCESS */
+
+    document.getElementById(
+        "successScreen"
+    ).style.display =
+        "block";
+
+
+    /* STEP 2 COMPLETE */
+
+    document.getElementById(
+        "step2"
+    ).classList.remove("active");
+
+
+    document.getElementById(
+        "step2"
+    ).classList.add("completed");
+
+
+    /* STEP CIRCLES */
+
+    document.querySelector(
+        "#step1 .step-circle"
+    ).textContent =
+        "✓";
+
+
+    document.querySelector(
+        "#step2 .step-circle"
+    ).textContent =
+        "✓";
+
+}
+
+
+/* ================= DATE FORMAT ================= */
+
+function formatDate(date){
+
+    const day =
+        String(
+            date.getDate()
+        ).padStart(2,"0");
+
+    const month =
+        String(
+            date.getMonth() + 1
+        ).padStart(2,"0");
+
+    const year =
+        date.getFullYear();
+
+
+    return (
+        day +
+        "/" +
+        month +
+        "/" +
+        year
+    );
+
+}
+
+
+/* ================= BACK ================= */
+
+function goBack(){
+
+    document.getElementById(
+        "otpScreen"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "registrationScreen"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "step1"
+    ).classList.remove("completed");
+
+
+    document.getElementById(
+        "step1"
+    ).classList.add("active");
+
+
+    document.getElementById(
+        "step2"
+    ).classList.remove("active");
+
+
+    document.getElementById(
+        "otp"
+    ).value = "";
+
+}
+
+
+/* ================= HOME ================= */
+
+function goHome(){
+
+    window.location.href =
+        "index.html";
+
+}
+
+</script>
+
+</body>
+</html>

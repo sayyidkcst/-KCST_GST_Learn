@@ -1,0 +1,2643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Promoters / Partners | KCST GST Learn</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f6f8;
+    color:#172033;
+    font-size:14px;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    height:55px;
+    background:#fff;
+    border-bottom:1px solid #ddd;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 22px;
+
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    text-decoration:none;
+    color:#14213d;
+    font-weight:bold;
+}
+
+.logo-icon{
+    width:34px;
+    height:34px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color:#fff;
+
+    border-radius:8px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:10px;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.dashboard{
+    color:#174ea6;
+    text-decoration:none;
+}
+
+.language{
+    color:#333;
+}
+
+
+/* ================= NOTICE ================= */
+
+.notice{
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    color:#1e40af;
+
+    padding:9px 15px;
+
+    text-align:center;
+
+    font-size:11px;
+}
+
+
+/* ================= MAIN ================= */
+
+.container{
+
+    width:1100px;
+
+    max-width:calc(100% - 30px);
+
+    margin:20px auto 50px;
+
+}
+
+
+/* ================= TOP ================= */
+
+.page-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:15px;
+}
+
+.page-title{
+
+    font-size:21px;
+
+    font-weight:400;
+
+    color:#143b75;
+}
+
+.trn{
+
+    font-size:12px;
+
+    color:#555;
+
+    background:#fff;
+
+    border:1px solid #ddd;
+
+    padding:8px 12px;
+}
+
+
+/* ================= PROGRESS ================= */
+
+.progress{
+
+    background:#fff;
+
+    border:1px solid #ddd;
+
+    display:flex;
+
+    overflow:hidden;
+
+    margin-bottom:18px;
+}
+
+.progress-item{
+
+    flex:1;
+
+    padding:13px 8px;
+
+    text-align:center;
+
+    border-right:1px solid #ddd;
+
+    color:#777;
+
+    font-size:12px;
+
+    white-space:nowrap;
+}
+
+.progress-item:last-child{
+    border-right:0;
+}
+
+.progress-item.completed{
+
+    background:#e8f3e8;
+
+    color:#16733b;
+
+}
+
+.progress-item.active{
+
+    background:#31598e;
+
+    color:#fff;
+
+}
+
+
+/* ================= CARD ================= */
+
+.card{
+
+    background:#fff;
+
+    border:1px solid #d9dde3;
+
+    margin-bottom:15px;
+}
+
+.card-title{
+
+    background:#f3f5f7;
+
+    border-bottom:1px solid #d9dde3;
+
+    padding:12px 15px;
+
+    color:#173f78;
+
+    font-size:16px;
+
+    font-weight:bold;
+}
+
+.card-body{
+
+    padding:18px;
+}
+
+
+/* ================= NOTE ================= */
+
+.note{
+
+    background:#fffbea;
+
+    border:1px solid #f4df9b;
+
+    color:#765c00;
+
+    padding:10px 12px;
+
+    font-size:12px;
+
+    line-height:1.6;
+
+    margin-bottom:15px;
+}
+
+
+/* ================= PROMOTER LIST ================= */
+
+.promoter-list{
+
+    margin-bottom:15px;
+}
+
+.promoter-row{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border:1px solid #d7dce2;
+
+    background:#fff;
+
+    padding:12px;
+
+    margin-bottom:8px;
+}
+
+.promoter-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+.avatar{
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    background:#e8eef7;
+
+    color:#31598e;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-weight:bold;
+
+    overflow:hidden;
+}
+
+.avatar img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.promoter-name{
+
+    font-weight:bold;
+
+    color:#173f78;
+
+    margin-bottom:4px;
+}
+
+.promoter-sub{
+
+    font-size:11px;
+
+    color:#64748b;
+}
+
+.row-actions{
+
+    display:flex;
+
+    gap:6px;
+}
+
+.small-btn{
+
+    border:0;
+
+    padding:7px 12px;
+
+    font-size:11px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+.edit-btn{
+
+    background:#e8eef7;
+
+    color:#31598e;
+}
+
+.delete-btn{
+
+    background:#fee2e2;
+
+    color:#b91c1c;
+}
+
+
+/* ================= EMPTY ================= */
+
+.empty{
+
+    border:1px dashed #cbd5e1;
+
+    padding:22px;
+
+    text-align:center;
+
+    color:#64748b;
+
+    font-size:12px;
+
+    background:#f8fafc;
+}
+
+
+/* ================= ADD BUTTON ================= */
+
+.add-button{
+
+    border:0;
+
+    background:#31598e;
+
+    color:#fff;
+
+    padding:10px 18px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+.add-button:hover{
+
+    background:#244b7d;
+
+}
+
+
+/* ================= FORM ================= */
+
+.row{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:16px 25px;
+
+    margin-bottom:15px;
+}
+
+.row.three{
+
+    grid-template-columns:
+        repeat(3,1fr);
+}
+
+.full{
+
+    grid-column:1 / -1;
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    font-size:13px;
+}
+
+.required{
+
+    color:red;
+
+    font-weight:bold;
+}
+
+.input,
+.select,
+.textarea{
+
+    width:100%;
+
+    border:1px solid #bfc5cc;
+
+    height:36px;
+
+    padding:0 10px;
+
+    background:#fff;
+
+    font-family:inherit;
+
+    font-size:13px;
+
+    outline:none;
+}
+
+.textarea{
+
+    height:75px;
+
+    padding-top:9px;
+
+    resize:vertical;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus{
+
+    border-color:#31598e;
+
+    box-shadow:
+        0 0 2px rgba(49,89,142,.25);
+}
+
+
+/* ================= RADIO ================= */
+
+.radio-group{
+
+    display:flex;
+
+    gap:25px;
+
+    align-items:center;
+
+    min-height:36px;
+}
+
+.radio-option{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    font-size:13px;
+}
+
+.radio-option input{
+
+    accent-color:#31598e;
+}
+
+
+/* ================= PHOTO ================= */
+
+.photo-area{
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:center;
+
+    padding:10px 0;
+}
+
+.photo-preview{
+
+    width:90px;
+    height:105px;
+
+    border:1px solid #cbd5e1;
+
+    background:#f8fafc;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#94a3b8;
+
+    font-size:11px;
+
+    overflow:hidden;
+}
+
+.photo-preview img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.file-input{
+
+    font-size:12px;
+}
+
+
+/* ================= ACTIONS ================= */
+
+.actions{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-top:20px;
+}
+
+.btn{
+
+    border:0;
+
+    height:36px;
+
+    padding:0 22px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.btn-back{
+
+    background:#e5e7eb;
+
+    color:#374151;
+}
+
+.btn-save{
+
+    background:#64748b;
+
+    color:#fff;
+}
+
+.btn-next{
+
+    background:#31598e;
+
+    color:#fff;
+}
+
+.btn:hover{
+
+    opacity:.9;
+}
+
+
+/* ================= MODAL ================= */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    z-index:500;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.45);
+
+    overflow:auto;
+
+    padding:25px 10px;
+}
+
+.modal-box{
+
+    width:850px;
+
+    max-width:100%;
+
+    margin:auto;
+
+    background:#fff;
+
+    border-radius:2px;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,.2);
+}
+
+.modal-header{
+
+    height:52px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 18px;
+
+    background:#F4F5F6;;
+
+    color:#222;
+
+}
+
+.modal-title{
+
+    font-size:16px;
+
+    font-weight:bold;
+}
+
+.close{
+
+    font-size:25px;
+
+    cursor:pointer;
+
+    font-weight:normal;
+}
+
+.modal-body{
+
+    padding:20px;
+}
+
+.modal-footer{
+
+    border-top:1px solid #ddd;
+
+    padding:12px 20px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:8px;
+}
+
+
+/* ================= ERROR ================= */
+
+.error{
+
+    border-color:#dc2626 !important;
+
+}
+
+.error-message{
+
+    color:#dc2626;
+
+    font-size:11px;
+
+    margin-top:4px;
+
+}
+
+
+/* ================= SAVED ================= */
+
+.saved-message{
+
+    display:none;
+
+    background:#ecfdf5;
+
+    border:1px solid #a7f3d0;
+
+    color:#166534;
+
+    padding:10px;
+
+    margin-top:15px;
+
+    text-align:center;
+
+    font-size:12px;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+    text-align:center;
+
+    color:#777;
+
+    font-size:10px;
+
+    margin:25px 0;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:750px){
+
+    .container{
+
+        max-width:calc(100% - 20px);
+
+        margin-top:12px;
+
+    }
+
+    .page-top{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:10px;
+    }
+
+    .trn{
+
+        width:100%;
+    }
+
+    .progress{
+
+        overflow-x:auto;
+    }
+
+    .progress-item{
+
+        min-width:140px;
+    }
+
+    .row,
+    .row.three{
+
+        grid-template-columns:1fr;
+    }
+
+    .full{
+
+        grid-column:auto;
+    }
+
+    .promoter-row{
+
+        align-items:flex-start;
+
+        gap:10px;
+
+    }
+
+    .row-actions{
+
+        flex-direction:column;
+    }
+
+    .actions{
+
+        flex-direction:column;
+    }
+
+    .btn{
+
+        width:100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-icon">
+            GST
+        </div>
+
+        <span>
+            KCST GST Learn
+        </span>
+
+    </a>
+
+
+    <div class="header-right">
+
+        <a
+            href="dashboard.html"
+            class="dashboard"
+        >
+            Dashboard
+        </a>
+
+        <span class="language">
+            🌐 English
+        </span>
+
+    </div>
+
+</header>
+
+
+<!-- ================= NOTICE ================= -->
+
+<div class="notice">
+
+    🎓 Learning Mode — This is a GST registration
+    practice simulation for students. It is not an
+    official GST Portal.
+
+</div>
+
+
+<!-- ================= MAIN ================= -->
+
+<div class="container">
+
+
+    <!-- TOP -->
+
+    <div class="page-top">
+
+        <div class="page-title">
+
+            Application for New Registration
+
+        </div>
+
+        <div class="trn">
+
+            TRN:
+            <b id="trnDisplay">
+                322600066856TRN
+            </b>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= PROGRESS ================= -->
+
+    <div class="progress">
+
+        <div class="progress-item completed">
+            ✓ Part A
+        </div>
+
+        <div class="progress-item completed">
+            ✓ Business Details
+        </div>
+
+        <div class="progress-item active">
+            2. Promoters / Partners
+        </div>
+
+        <div class="progress-item">
+            3. Authorized Signatory
+        </div>
+
+        <div class="progress-item">
+            4. Principal Place
+        </div>
+
+        <div class="progress-item">
+            5. Goods & Services
+        </div>
+
+    </div>
+
+
+    <!-- ================= PROMOTERS ================= -->
+
+    <div class="card">
+
+        <div class="card-title">
+
+            2. Promoters / Partners
+
+        </div>
+
+
+        <div class="card-body">
+
+            <div class="note">
+
+                Add details of the proprietor, partners,
+                directors or other persons responsible for
+                the business.
+
+                <br><br>
+
+                <b>Learning Tip:</b>
+                For a proprietorship, normally add the
+                proprietor as the promoter.
+
+            </div>
+
+
+            <!-- LIST -->
+
+            <div
+                id="promoterList"
+                class="promoter-list"
+            >
+
+                <div class="empty">
+
+                    No promoters / partners have been added.
+
+                    <br><br>
+
+                    Click <b>+ ADD PROMOTER / PARTNER</b>
+                    to begin.
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="add-button"
+                onclick="openModal()"
+            >
+                + ADD PROMOTER / PARTNER
+            </button>
+
+
+            <div
+                id="savedMessage"
+                class="saved-message"
+            >
+                ✓ Promoter details saved successfully.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= DECLARATION ================= -->
+
+    <div class="card">
+
+        <div class="card-title">
+
+            Declaration
+
+        </div>
+
+        <div class="card-body">
+
+            <label class="radio-option">
+
+                <input
+                    type="checkbox"
+                    id="declaration"
+                >
+
+                I confirm that the promoter / partner
+                information entered in this learning
+                exercise is correct.
+
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= ACTIONS ================= -->
+
+    <div class="actions">
+
+        <button
+            class="btn btn-back"
+            onclick="goBack()"
+        >
+            ← BACK
+        </button>
+
+
+        <button
+            class="btn btn-save"
+            onclick="saveDraft()"
+        >
+            SAVE AS DRAFT
+        </button>
+
+
+        <button
+            class="btn btn-next"
+            onclick="continueNext()"
+        >
+            SAVE & CONTINUE →
+        </button>
+
+    </div>
+
+
+</div>
+
+
+<!-- ================= ADD PROMOTER MODAL ================= -->
+
+<div
+    id="promoterModal"
+    class="modal"
+>
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <div class="modal-title">
+
+                Add Promoter / Partner
+
+            </div>
+
+            <div
+                class="close"
+                onclick="closeModal()"
+            >
+                ×
+            </div>
+
+        </div>
+
+
+        <div class="modal-body">
+
+
+            <!-- NAME -->
+
+            <div class="row">
+
+                <div class="form-group">
+
+                    <label>
+
+                        Full Name
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="pName"
+                        class="input"
+                        placeholder="Enter full name"
+                    >
+
+                </div>
+
+
+                <!-- DESIGNATION -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Designation / Status
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <select
+                        id="pDesignation"
+                        class="select"
+                    >
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option>
+                            Proprietor
+                        </option>
+
+                        <option>
+                            Partner
+                        </option>
+
+                        <option>
+                            Director
+                        </option>
+
+                        <option>
+                            Karta
+                        </option>
+
+                        <option>
+                            Trustee
+                        </option>
+
+                        <option>
+                            Member
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAN / AADHAAR -->
+
+            <div class="row">
+
+                <div class="form-group">
+
+                    <label>
+
+                        PAN
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="pPAN"
+                        class="input"
+                        maxlength="10"
+                        placeholder="Enter PAN"
+                        oninput="formatPAN(this)"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        Aadhaar Number
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="pAadhaar"
+                        class="input"
+                        maxlength="12"
+                        placeholder="Enter 12-digit Aadhaar"
+                        oninput="numbersOnly(this)"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- DOB / GENDER -->
+
+            <div class="row three">
+
+                <div class="form-group">
+
+                    <label>
+
+                        Date of Birth
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <input
+                        type="date"
+                        id="pDOB"
+                        class="input"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        Gender
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <select
+                        id="pGender"
+                        class="select"
+                    >
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option>
+                            Male
+                        </option>
+
+                        <option>
+                            Female
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        Percentage of Ownership
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="pOwnership"
+                        class="input"
+                        min="0"
+                        max="100"
+                        placeholder="Example: 100"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- MOBILE / EMAIL -->
+
+            <div class="row">
+
+                <div class="form-group">
+
+                    <label>
+
+                        Mobile Number
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="pMobile"
+                        class="input"
+                        maxlength="10"
+                        placeholder="10-digit mobile number"
+                        oninput="numbersOnly(this)"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        Email Address
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <input
+                        type="email"
+                        id="pEmail"
+                        class="input"
+                        placeholder="Email address"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- ADDRESS -->
+
+            <div class="row">
+
+                <div class="form-group full">
+
+                    <label>
+
+                        Residential Address
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <textarea
+                        id="pAddress"
+                        class="textarea"
+                        placeholder="Enter complete residential address"
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <!-- STATE / DISTRICT -->
+
+            <div class="row three">
+
+                <div class="form-group">
+
+                    <label>
+
+                        State
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <select
+                        id="pState"
+                        class="select"
+                        onchange="loadDistricts()"
+                    >
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option>
+                            Kerala
+                        </option>
+
+                        <option>
+                            Tamil Nadu
+                        </option>
+
+                        <option>
+                            Karnataka
+                        </option>
+
+                        <option>
+                            Maharashtra
+                        </option>
+
+                        <option>
+                            Delhi
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        District
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <select
+                        id="pDistrict"
+                        class="select"
+                    >
+
+                        <option>
+                            Select
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        PIN Code
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="pPIN"
+                        class="input"
+                        maxlength="6"
+                        placeholder="6-digit PIN"
+                        oninput="numbersOnly(this)"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO -->
+
+            <div class="form-group">
+
+                <label>
+
+                    Photograph
+
+                </label>
+
+
+                <div class="photo-area">
+
+                    <div
+                        id="photoPreview"
+                        class="photo-preview"
+                    >
+                        Photo Preview
+                    </div>
+
+
+                    <input
+                        type="file"
+                        id="pPhoto"
+                        class="file-input"
+                        accept="image/*"
+                        onchange="previewPhoto(event)"
+                    >
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                class="btn btn-back"
+                onclick="closeModal()"
+            >
+                CANCEL
+            </button>
+
+
+            <button
+                id="modalSaveButton"
+                class="btn btn-next"
+                onclick="savePromoter()"
+            >
+                ADD PROMOTER
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+
+    KCST GST Learn © 2026
+    | GST Registration Learning Module
+
+</div>
+
+
+<script>
+
+
+/* ================= DATA ================= */
+
+let promoters = [];
+
+let editingIndex = -1;
+
+let photoData = "";
+
+
+/* ================= LOAD ================= */
+
+window.onload = function(){
+
+    const saved =
+        localStorage.getItem(
+            "gstPromoters"
+        );
+
+    const savedTRN =
+        localStorage.getItem(
+            "gstTRN"
+        );
+
+
+    if(saved){
+
+        try{
+
+            promoters =
+                JSON.parse(saved);
+
+        }
+        catch(e){
+
+            promoters = [];
+
+        }
+
+    }
+
+
+    if(savedTRN){
+
+        document.getElementById(
+            "trnDisplay"
+        ).textContent =
+            savedTRN;
+
+    }
+
+
+    renderPromoters();
+
+};
+
+
+/* ================= MODAL ================= */
+
+function openModal(){
+
+    editingIndex = -1;
+
+    clearForm();
+
+    document.getElementById(
+        "modalSaveButton"
+    ).textContent =
+        "ADD PROMOTER";
+
+    document.getElementById(
+        "promoterModal"
+    ).style.display =
+        "block";
+
+}
+
+
+function closeModal(){
+
+    document.getElementById(
+        "promoterModal"
+    ).style.display =
+        "none";
+
+}
+
+
+/* ================= CLEAR ================= */
+
+function clearForm(){
+
+    document.getElementById(
+        "pName"
+    ).value = "";
+
+    document.getElementById(
+        "pDesignation"
+    ).value = "";
+
+    document.getElementById(
+        "pPAN"
+    ).value = "";
+
+    document.getElementById(
+        "pAadhaar"
+    ).value = "";
+
+    document.getElementById(
+        "pDOB"
+    ).value = "";
+
+    document.getElementById(
+        "pGender"
+    ).value = "";
+
+    document.getElementById(
+        "pOwnership"
+    ).value = "";
+
+    document.getElementById(
+        "pMobile"
+    ).value = "";
+
+    document.getElementById(
+        "pEmail"
+    ).value = "";
+
+    document.getElementById(
+        "pAddress"
+    ).value = "";
+
+    document.getElementById(
+        "pState"
+    ).value = "";
+
+    document.getElementById(
+        "pDistrict"
+    ).innerHTML =
+        '<option>Select</option>';
+
+    document.getElementById(
+        "pPIN"
+    ).value = "";
+
+    document.getElementById(
+        "pPhoto"
+    ).value = "";
+
+    document.getElementById(
+        "photoPreview"
+    ).innerHTML =
+        "Photo Preview";
+
+    photoData = "";
+
+}
+
+
+/* ================= PAN ================= */
+
+function formatPAN(input){
+
+    input.value =
+        input.value
+        .toUpperCase()
+        .replace(/[^A-Z0-9]/g,"")
+        .substring(0,10);
+
+}
+
+
+/* ================= NUMBERS ================= */
+
+function numbersOnly(input){
+
+    input.value =
+        input.value
+        .replace(/[^0-9]/g,"");
+
+}
+
+
+/* ================= DISTRICTS ================= */
+
+function loadDistricts(){
+
+    const state =
+        document.getElementById(
+            "pState"
+        ).value;
+
+    const district =
+        document.getElementById(
+            "pDistrict"
+        );
+
+
+    district.innerHTML =
+        '<option>Select</option>';
+
+
+    const districts = {
+
+        "Kerala":[
+            "Alappuzha",
+            "Ernakulam",
+            "Idukki",
+            "Kannur",
+            "Kasaragod",
+            "Kollam",
+            "Kottayam",
+            "Kozhikode",
+            "Malappuram",
+            "Palakkad",
+            "Pathanamthitta",
+            "Thiruvananthapuram",
+            "Thrissur",
+            "Wayanad"
+        ],
+
+        "Tamil Nadu":[
+            "Chennai",
+            "Coimbatore",
+            "Madurai",
+            "Salem",
+            "Tiruchirappalli",
+            "Tiruppur"
+        ],
+
+        "Karnataka":[
+            "Bengaluru Urban",
+            "Mysuru",
+            "Mangaluru",
+            "Belagavi",
+            "Hubballi"
+        ],
+
+        "Maharashtra":[
+            "Mumbai",
+            "Pune",
+            "Nagpur",
+            "Nashik",
+            "Thane"
+        ],
+
+        "Delhi":[
+            "Central Delhi",
+            "East Delhi",
+            "New Delhi",
+            "North Delhi",
+            "South Delhi"
+        ]
+
+    };
+
+
+    if(districts[state]){
+
+        districts[state].forEach(
+            function(name){
+
+                const option =
+                    document.createElement(
+                        "option"
+                    );
+
+                option.value =
+                    name;
+
+                option.textContent =
+                    name;
+
+                district.appendChild(
+                    option
+                );
+
+            }
+        );
+
+    }
+
+}
+
+
+/* ================= PHOTO ================= */
+
+function previewPhoto(event){
+
+    const file =
+        event.target.files[0];
+
+    if(!file)
+        return;
+
+
+    const reader =
+        new FileReader();
+
+
+    reader.onload =
+        function(e){
+
+            photoData =
+                e.target.result;
+
+            document.getElementById(
+                "photoPreview"
+            ).innerHTML =
+                '<img src="' +
+                photoData +
+                '">';
+
+        };
+
+
+    reader.readAsDataURL(file);
+
+}
+
+
+/* ================= VALIDATE ================= */
+
+function validatePromoter(){
+
+    const name =
+        document.getElementById(
+            "pName"
+        ).value.trim();
+
+    const designation =
+        document.getElementById(
+            "pDesignation"
+        ).value;
+
+    const pan =
+        document.getElementById(
+            "pPAN"
+        ).value.toUpperCase();
+
+    const dob =
+        document.getElementById(
+            "pDOB"
+        ).value;
+
+    const gender =
+        document.getElementById(
+            "pGender"
+        ).value;
+
+    const mobile =
+        document.getElementById(
+            "pMobile"
+        ).value;
+
+    const email =
+        document.getElementById(
+            "pEmail"
+        ).value;
+
+    const address =
+        document.getElementById(
+            "pAddress"
+        ).value.trim();
+
+    const state =
+        document.getElementById(
+            "pState"
+        ).value;
+
+    const district =
+        document.getElementById(
+            "pDistrict"
+        ).value;
+
+    const pin =
+        document.getElementById(
+            "pPIN"
+        ).value;
+
+
+    if(name === ""){
+
+        alert(
+            "Please enter the full name."
+        );
+
+        return false;
+
+    }
+
+
+    if(designation === ""){
+
+        alert(
+            "Please select the designation / status."
+        );
+
+        return false;
+
+    }
+
+
+    if(
+        !/^[A-Z]{5}[0-9]{4}[A-Z]$/.test(pan)
+    ){
+
+        alert(
+            "Please enter a valid PAN."
+        );
+
+        return false;
+
+    }
+
+
+    if(dob === ""){
+
+        alert(
+            "Please enter the date of birth."
+        );
+
+        return false;
+
+    }
+
+
+    if(gender === ""){
+
+        alert(
+            "Please select gender."
+        );
+
+        return false;
+
+    }
+
+
+    if(
+        !/^[0-9]{10}$/.test(mobile)
+    ){
+
+        alert(
+            "Please enter a valid 10-digit mobile number."
+        );
+
+        return false;
+
+    }
+
+
+    if(email === ""){
+
+        alert(
+            "Please enter email address."
+        );
+
+        return false;
+
+    }
+
+
+    if(address === ""){
+
+        alert(
+            "Please enter residential address."
+        );
+
+        return false;
+
+    }
+
+
+    if(state === ""){
+
+        alert(
+            "Please select state."
+        );
+
+        return false;
+
+    }
+
+
+    if(
+        district === "" ||
+        district === "Select"
+    ){
+
+        alert(
+            "Please select district."
+        );
+
+        return false;
+
+    }
+
+
+    if(
+        !/^[0-9]{6}$/.test(pin)
+    ){
+
+        alert(
+            "Please enter a valid 6-digit PIN code."
+        );
+
+        return false;
+
+    }
+
+
+    return true;
+
+}
+
+
+/* ================= SAVE PROMOTER ================= */
+
+function savePromoter(){
+
+    if(!validatePromoter())
+        return;
+
+
+    const promoter = {
+
+        name:
+            document.getElementById(
+                "pName"
+            ).value.trim(),
+
+        designation:
+            document.getElementById(
+                "pDesignation"
+            ).value,
+
+        pan:
+            document.getElementById(
+                "pPAN"
+            ).value.toUpperCase(),
+
+        aadhaar:
+            document.getElementById(
+                "pAadhaar"
+            ).value,
+
+        dob:
+            document.getElementById(
+                "pDOB"
+            ).value,
+
+        gender:
+            document.getElementById(
+                "pGender"
+            ).value,
+
+        ownership:
+            document.getElementById(
+                "pOwnership"
+            ).value,
+
+        mobile:
+            document.getElementById(
+                "pMobile"
+            ).value,
+
+        email:
+            document.getElementById(
+                "pEmail"
+            ).value,
+
+        address:
+            document.getElementById(
+                "pAddress"
+            ).value.trim(),
+
+        state:
+            document.getElementById(
+                "pState"
+            ).value,
+
+        district:
+            document.getElementById(
+                "pDistrict"
+            ).value,
+
+        pin:
+            document.getElementById(
+                "pPIN"
+            ).value,
+
+        photo:
+            photoData
+
+    };
+
+
+    if(editingIndex === -1){
+
+        promoters.push(
+            promoter
+        );
+
+    }
+    else{
+
+        promoters[
+            editingIndex
+        ] = promoter;
+
+    }
+
+
+    localStorage.setItem(
+        "gstPromoters",
+        JSON.stringify(promoters)
+    );
+
+
+    renderPromoters();
+
+    closeModal();
+
+}
+
+
+/* ================= RENDER ================= */
+
+function renderPromoters(){
+
+    const list =
+        document.getElementById(
+            "promoterList"
+        );
+
+
+    if(promoters.length === 0){
+
+        list.innerHTML =
+
+            '<div class="empty">' +
+
+            'No promoters / partners have been added.' +
+
+            '<br><br>' +
+
+            'Click <b>+ ADD PROMOTER / PARTNER</b>' +
+
+            ' to begin.' +
+
+            '</div>';
+
+        return;
+
+    }
+
+
+    list.innerHTML = "";
+
+
+    promoters.forEach(
+        function(p,index){
+
+            const row =
+                document.createElement(
+                    "div"
+                );
+
+            row.className =
+                "promoter-row";
+
+
+            let avatar = "";
+
+            if(p.photo){
+
+                avatar =
+                    '<img src="' +
+                    p.photo +
+                    '">';
+
+            }
+            else{
+
+                avatar =
+                    getInitials(p.name);
+
+            }
+
+
+            row.innerHTML =
+
+                '<div class="promoter-info">' +
+
+                    '<div class="avatar">' +
+                        avatar +
+                    '</div>' +
+
+                    '<div>' +
+
+                        '<div class="promoter-name">' +
+                            escapeHTML(p.name) +
+                        '</div>' +
+
+                        '<div class="promoter-sub">' +
+                            escapeHTML(p.designation) +
+                            ' &nbsp; | &nbsp; PAN: ' +
+                            maskPAN(p.pan) +
+                        '</div>' +
+
+                    '</div>' +
+
+                '</div>' +
+
+
+                '<div class="row-actions">' +
+
+                    '<button ' +
+                    'class="small-btn edit-btn" ' +
+                    'onclick="editPromoter(' +
+                    index +
+                    ')">' +
+
+                    'EDIT' +
+
+                    '</button>' +
+
+
+                    '<button ' +
+                    'class="small-btn delete-btn" ' +
+                    'onclick="deletePromoter(' +
+                    index +
+                    ')">' +
+
+                    'DELETE' +
+
+                    '</button>' +
+
+                '</div>';
+
+
+            list.appendChild(row);
+
+        }
+    );
+
+}
+
+
+/* ================= INITIALS ================= */
+
+function getInitials(name){
+
+    const parts =
+        name.trim().split(" ");
+
+    let initials = "";
+
+    parts.slice(0,2).forEach(
+        function(part){
+
+            if(part.length > 0){
+
+                initials +=
+                    part.charAt(0)
+                    .toUpperCase();
+
+            }
+
+        }
+    );
+
+    return initials || "P";
+
+}
+
+
+/* ================= MASK PAN ================= */
+
+function maskPAN(pan){
+
+    if(!pan)
+        return "";
+
+    return (
+        pan.substring(0,2) +
+        "******" +
+        pan.substring(8)
+    );
+
+}
+
+
+/* ================= ESCAPE ================= */
+
+function escapeHTML(text){
+
+    const div =
+        document.createElement(
+            "div"
+        );
+
+    div.textContent =
+        text;
+
+    return div.innerHTML;
+
+}
+
+
+/* ================= EDIT ================= */
+
+function editPromoter(index){
+
+    const p =
+        promoters[index];
+
+    editingIndex =
+        index;
+
+
+    document.getElementById(
+        "pName"
+    ).value =
+        p.name;
+
+    document.getElementById(
+        "pDesignation"
+    ).value =
+        p.designation;
+
+    document.getElementById(
+        "pPAN"
+    ).value =
+        p.pan;
+
+    document.getElementById(
+        "pAadhaar"
+    ).value =
+        p.aadhaar;
+
+    document.getElementById(
+        "pDOB"
+    ).value =
+        p.dob;
+
+    document.getElementById(
+        "pGender"
+    ).value =
+        p.gender;
+
+    document.getElementById(
+        "pOwnership"
+    ).value =
+        p.ownership;
+
+    document.getElementById(
+        "pMobile"
+    ).value =
+        p.mobile;
+
+    document.getElementById(
+        "pEmail"
+    ).value =
+        p.email;
+
+    document.getElementById(
+        "pAddress"
+    ).value =
+        p.address;
+
+    document.getElementById(
+        "pState"
+    ).value =
+        p.state;
+
+
+    loadDistricts();
+
+
+    document.getElementById(
+        "pDistrict"
+    ).value =
+        p.district;
+
+
+    document.getElementById(
+        "pPIN"
+    ).value =
+        p.pin;
+
+
+    photoData =
+        p.photo || "";
+
+
+    if(photoData){
+
+        document.getElementById(
+            "photoPreview"
+        ).innerHTML =
+            '<img src="' +
+            photoData +
+            '">';
+
+    }
+
+
+    document.getElementById(
+        "modalSaveButton"
+    ).textContent =
+        "UPDATE PROMOTER";
+
+
+    document.getElementById(
+        "promoterModal"
+    ).style.display =
+        "block";
+
+}
+
+
+/* ================= DELETE ================= */
+
+function deletePromoter(index){
+
+    if(
+        !confirm(
+            "Are you sure you want to delete this promoter / partner?"
+        )
+    ){
+
+        return;
+
+    }
+
+
+    promoters.splice(
+        index,
+        1
+    );
+
+
+    localStorage.setItem(
+        "gstPromoters",
+        JSON.stringify(promoters)
+    );
+
+
+    renderPromoters();
+
+}
+
+
+/* ================= SAVE DRAFT ================= */
+
+function saveDraft(){
+
+    localStorage.setItem(
+        "gstPromoters",
+        JSON.stringify(promoters)
+    );
+
+
+    const message =
+        document.getElementById(
+            "savedMessage"
+        );
+
+
+    message.style.display =
+        "block";
+
+
+    setTimeout(
+        function(){
+
+            message.style.display =
+                "none";
+
+        },
+        3000
+    );
+
+}
+
+
+/* ================= CONTINUE ================= */
+
+function continueNext(){
+
+    if(promoters.length === 0){
+
+        alert(
+            "Please add at least one promoter / partner before continuing."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        !document.getElementById(
+            "declaration"
+        ).checked
+    ){
+
+        alert(
+            "Please accept the declaration before continuing."
+        );
+
+        return;
+
+    }
+
+
+    localStorage.setItem(
+        "gstPromoters",
+        JSON.stringify(promoters)
+    );
+
+
+    window.location.href =
+        "authorized-signatory.html";
+
+}
+
+
+/* ================= BACK ================= */
+
+function goBack(){
+
+    window.location.href =
+        "partb.html";
+
+}
+
+
+/* ================= CLOSE MODAL OUTSIDE ================= */
+
+window.onclick =
+    function(event){
+
+        const modal =
+            document.getElementById(
+                "promoterModal"
+            );
+
+        if(event.target === modal){
+
+            closeModal();
+
+        }
+
+    };
+
+
+</script>
+
+</body>
+</html>.

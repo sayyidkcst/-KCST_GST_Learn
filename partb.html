@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Part B - GST Registration | KCST GST Learn</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f6f8;
+    color:#172033;
+    font-size:14px;
+}
+
+
+/* ================= HEADER ================= */
+
+.header{
+    height:55px;
+
+    background:#fff;
+
+    border-bottom:1px solid #ddd;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 22px;
+
+    position:sticky;
+    top:0;
+
+    z-index:100;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    text-decoration:none;
+
+    color:#14213d;
+
+    font-weight:bold;
+}
+
+.logo-icon{
+    width:34px;
+    height:34px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color:white;
+
+    border-radius:8px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:10px;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.dashboard{
+    color:#174ea6;
+    text-decoration:none;
+}
+
+.language{
+    color:#333;
+}
+
+
+/* ================= NOTICE ================= */
+
+.notice{
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    color:#1e40af;
+
+    padding:9px 15px;
+
+    text-align:center;
+
+    font-size:11px;
+}
+
+
+/* ================= MAIN ================= */
+
+.container{
+
+    width:1100px;
+
+    max-width:calc(100% - 30px);
+
+    margin:20px auto 50px;
+
+}
+
+
+/* ================= TOP ================= */
+
+.page-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:15px;
+}
+
+.page-title{
+
+    font-size:21px;
+
+    font-weight:400;
+
+    color:#143b75;
+}
+
+.trn{
+
+    font-size:12px;
+
+    color:#555;
+
+    background:white;
+
+    border:1px solid #ddd;
+
+    padding:8px 12px;
+}
+
+
+/* ================= PROGRESS ================= */
+
+.progress{
+
+    background:#fff;
+
+    border:1px solid #ddd;
+
+    display:flex;
+
+    overflow:hidden;
+
+    margin-bottom:18px;
+}
+
+.progress-item{
+
+    flex:1;
+
+    padding:13px 8px;
+
+    text-align:center;
+
+    border-right:1px solid #ddd;
+
+    color:#777;
+
+    font-size:12px;
+
+    position:relative;
+}
+
+.progress-item:last-child{
+    border-right:0;
+}
+
+.progress-item.active{
+
+    background:#31598e;
+
+    color:#fff;
+
+}
+
+.progress-item.completed{
+
+    background:#e8f3e8;
+
+    color:#16733b;
+
+}
+
+
+/* ================= CARD ================= */
+
+.card{
+
+    background:#fff;
+
+    border:1px solid #d9dde3;
+
+    margin-bottom:15px;
+
+}
+
+.card-title{
+
+    background:#f3f5f7;
+
+    border-bottom:1px solid #d9dde3;
+
+    padding:12px 15px;
+
+    color:#173f78;
+
+    font-size:16px;
+
+    font-weight:bold;
+}
+
+.card-body{
+
+    padding:18px;
+}
+
+
+/* ================= GRID ================= */
+
+.row{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:16px 25px;
+
+    margin-bottom:15px;
+}
+
+.row.three{
+
+    grid-template-columns:
+        repeat(3, 1fr);
+}
+
+.full{
+
+    grid-column:1 / -1;
+}
+
+
+/* ================= FORM ================= */
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    font-size:13px;
+
+    color:#202020;
+}
+
+.required{
+
+    color:red;
+
+    font-weight:bold;
+}
+
+.input,
+.select,
+.textarea{
+
+    width:100%;
+
+    border:1px solid #bfc5cc;
+
+    height:36px;
+
+    padding:0 10px;
+
+    background:#fff;
+
+    font-family:inherit;
+
+    font-size:13px;
+
+    outline:none;
+}
+
+.textarea{
+
+    height:75px;
+
+    padding-top:9px;
+
+    resize:vertical;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus{
+
+    border-color:#31598e;
+
+    box-shadow:
+        0 0 2px rgba(49,89,142,.25);
+}
+
+
+/* ================= RADIO ================= */
+
+.radio-group{
+
+    display:flex;
+
+    gap:25px;
+
+    align-items:center;
+
+    min-height:36px;
+}
+
+.radio-option{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    cursor:pointer;
+
+    font-size:13px;
+}
+
+.radio-option input{
+
+    accent-color:#31598e;
+}
+
+
+/* ================= CHECKBOX ================= */
+
+.checkbox{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:8px;
+
+    font-size:13px;
+
+    line-height:1.5;
+
+    margin:10px 0;
+}
+
+.checkbox input{
+
+    margin-top:3px;
+
+    accent-color:#31598e;
+}
+
+
+/* ================= PAN DISPLAY ================= */
+
+.pan-box{
+
+    background:#f8fafc;
+
+    border:1px solid #e1e5ea;
+
+    padding:10px 12px;
+
+    font-weight:bold;
+
+    color:#334155;
+}
+
+
+/* ================= SECTION NOTE ================= */
+
+.note{
+
+    background:#fffbea;
+
+    border:1px solid #f4df9b;
+
+    color:#765c00;
+
+    padding:10px 12px;
+
+    font-size:12px;
+
+    line-height:1.6;
+
+    margin-bottom:15px;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.actions{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-top:20px;
+}
+
+.btn{
+
+    border:0;
+
+    height:36px;
+
+    padding:0 22px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.btn-back{
+
+    background:#e5e7eb;
+
+    color:#374151;
+}
+
+.btn-save{
+
+    background:#64748b;
+
+    color:#fff;
+}
+
+.btn-next{
+
+    background:#31598e;
+
+    color:#fff;
+}
+
+.btn:hover{
+
+    opacity:.9;
+}
+
+
+/* ================= SUCCESS ================= */
+
+.saved-message{
+
+    display:none;
+
+    background:#ecfdf5;
+
+    border:1px solid #a7f3d0;
+
+    color:#166534;
+
+    padding:10px;
+
+    margin-top:15px;
+
+    text-align:center;
+
+    font-size:12px;
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+    text-align:center;
+
+    color:#777;
+
+    font-size:10px;
+
+    margin:25px 0;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:750px){
+
+    .container{
+
+        max-width:calc(100% - 20px);
+
+        margin-top:12px;
+    }
+
+    .page-top{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:10px;
+    }
+
+    .trn{
+
+        width:100%;
+    }
+
+    .progress{
+
+        overflow-x:auto;
+    }
+
+    .progress-item{
+
+        min-width:125px;
+    }
+
+    .row,
+    .row.three{
+
+        grid-template-columns:1fr;
+    }
+
+    .full{
+
+        grid-column:auto;
+    }
+
+    .actions{
+
+        flex-direction:column;
+    }
+
+    .btn{
+
+        width:100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-icon">
+            GST
+        </div>
+
+        <span>
+            KCST GST Learn
+        </span>
+
+    </a>
+
+
+    <div class="header-right">
+
+        <a
+            href="dashboard.html"
+            class="dashboard"
+        >
+            Dashboard
+        </a>
+
+        <span class="language">
+            🌐 English
+        </span>
+
+    </div>
+
+</header>
+
+
+<!-- ================= NOTICE ================= -->
+
+<div class="notice">
+
+    🎓 Learning Mode — This is a GST registration
+    practice simulation for students. It is not an
+    official GST Portal.
+
+</div>
+
+
+<!-- ================= MAIN ================= -->
+
+<div class="container">
+
+
+    <!-- PAGE TITLE -->
+
+    <div class="page-top">
+
+        <div class="page-title">
+            Application for New Registration
+        </div>
+
+        <div class="trn">
+
+            TRN:
+            <b id="trnDisplay">
+                322600066856TRN
+            </b>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= PROGRESS ================= -->
+
+    <div class="progress">
+
+        <div class="progress-item completed">
+            ✓ Part A
+        </div>
+
+        <div class="progress-item active">
+            1. Business Details
+        </div>
+
+        <div class="progress-item">
+            2. Promoters
+        </div>
+
+        <div class="progress-item">
+            3. Authorized Signatory
+        </div>
+
+        <div class="progress-item">
+            4. Principal Place
+        </div>
+
+        <div class="progress-item">
+            5. Goods & Services
+        </div>
+
+    </div>
+
+
+    <!-- ================= BUSINESS DETAILS ================= -->
+
+    <div class="card">
+
+        <div class="card-title">
+
+            1. Business Details
+
+        </div>
+
+
+        <div class="card-body">
+
+
+            <div class="note">
+
+                Please enter the details of the business
+                exactly as they should appear in the
+                registration application.
+
+            </div>
+
+
+            <!-- LEGAL NAME -->
+
+            <div class="row">
+
+                <div class="form-group">
+
+                    <label>
+
+                        Legal Name of the Business
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="legalName"
+                        class="input"
+                        placeholder="Enter legal name"
+                    >
+
+                </div>
+
+
+                <!-- TRADE NAME -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Trade Name
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="tradeName"
+                        class="input"
+                        placeholder="Enter trade name"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- PAN -->
+
+            <div class="row">
+
+                <div class="form-group">
+
+                    <label>
+                        Permanent Account Number (PAN)
+                    </label>
+
+                    <div
+                        id="panDisplay"
+                        class="pan-box"
+                    >
+                        XXXXX1234X
+                    </div>
+
+                </div>
+
+
+                <!-- CONSTITUTION -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Constitution of Business
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <select
+                        id="constitution"
+                        class="select"
+                    >
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option>
+                            Proprietorship
+                        </option>
+
+                        <option>
+                            Partnership Firm
+                        </option>
+
+                        <option>
+                            Private Limited Company
+                        </option>
+
+                        <option>
+                            Public Limited Company
+                        </option>
+
+                        <option>
+                            LLP
+                        </option>
+
+                        <option>
+                            Society / Club / Trust
+                        </option>
+
+                        <option>
+                            Others
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- DATE -->
+
+            <div class="row three">
+
+                <div class="form-group">
+
+                    <label>
+
+                        Date of Commencement of Business
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <input
+                        type="date"
+                        id="commencement"
+                        class="input"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        Date on which Liability to
+                        Register Arises
+
+                    </label>
+
+                    <input
+                        type="date"
+                        id="liabilityDate"
+                        class="input"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        State
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <select
+                        id="state"
+                        class="select"
+                    >
+
+                        <option>
+                            Kerala
+                        </option>
+
+                        <option>
+                            Tamil Nadu
+                        </option>
+
+                        <option>
+                            Karnataka
+                        </option>
+
+                        <option>
+                            Maharashtra
+                        </option>
+
+                        <option>
+                            Delhi
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- REGISTRATION REASON -->
+
+            <div class="row">
+
+                <div class="form-group">
+
+                    <label>
+
+                        Reason to Obtain Registration
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <select
+                        id="reason"
+                        class="select"
+                    >
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option>
+                            Turnover exceeds the threshold
+                        </option>
+
+                        <option>
+                            Voluntary Basis
+                        </option>
+
+                        <option>
+                            Inter-State Supply
+                        </option>
+
+                        <option>
+                            E-Commerce Operator
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        Type of Registration
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <div class="radio-group">
+
+                        <label class="radio-option">
+
+                            <input
+                                type="radio"
+                                name="registrationType"
+                                checked
+                            >
+
+                            Regular
+
+                        </label>
+
+                        <label class="radio-option">
+
+                            <input
+                                type="radio"
+                                name="registrationType"
+                            >
+
+                            Composition
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- OPTION -->
+
+            <div class="form-group">
+
+                <label>
+
+                    Whether applying for registration
+                    as a Casual Taxable Person?
+
+                </label>
+
+                <div class="radio-group">
+
+                    <label class="radio-option">
+
+                        <input
+                            type="radio"
+                            name="casual"
+                            value="yes"
+                        >
+
+                        Yes
+
+                    </label>
+
+                    <label class="radio-option">
+
+                        <input
+                            type="radio"
+                            name="casual"
+                            value="no"
+                            checked
+                        >
+
+                        No
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TRADE NAME ================= -->
+
+    <div class="card">
+
+        <div class="card-title">
+
+            Additional Business Information
+
+        </div>
+
+
+        <div class="card-body">
+
+
+            <div class="row">
+
+                <div class="form-group">
+
+                    <label>
+
+                        Business Email Address
+
+                    </label>
+
+                    <input
+                        type="email"
+                        class="input"
+                        placeholder="Enter business email"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        Business Mobile Number
+
+                    </label>
+
+                    <input
+                        type="tel"
+                        maxlength="10"
+                        class="input"
+                        placeholder="Enter mobile number"
+                        oninput="numbersOnly(this)"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="form-group full">
+
+                    <label>
+
+                        Nature of Business Activity
+
+                        <span class="required">*</span>
+
+                    </label>
+
+                    <div class="checkbox">
+
+                        <input type="checkbox">
+
+                        <span>
+                            Retail Business
+                        </span>
+
+                    </div>
+
+                    <div class="checkbox">
+
+                        <input type="checkbox">
+
+                        <span>
+                            Wholesale Business
+                        </span>
+
+                    </div>
+
+                    <div class="checkbox">
+
+                        <input type="checkbox">
+
+                        <span>
+                            Service Provider
+                        </span>
+
+                    </div>
+
+                    <div class="checkbox">
+
+                        <input type="checkbox">
+
+                        <span>
+                            Manufacturing
+                        </span>
+
+                    </div>
+
+                    <div class="checkbox">
+
+                        <input type="checkbox">
+
+                        <span>
+                            E-Commerce
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= DECLARATION ================= -->
+
+    <div class="card">
+
+        <div class="card-title">
+
+            Declaration
+
+        </div>
+
+
+        <div class="card-body">
+
+            <label class="checkbox">
+
+                <input
+                    type="checkbox"
+                    id="declaration"
+                >
+
+                <span>
+
+                    I confirm that the information entered
+                    in this learning exercise is correct to
+                    the best of my knowledge.
+
+                </span>
+
+            </label>
+
+
+            <div
+                id="savedMessage"
+                class="saved-message"
+            >
+                ✓ Business details saved successfully.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= ACTIONS ================= -->
+
+    <div class="actions">
+
+        <button
+            class="btn btn-back"
+            onclick="goDashboard()"
+        >
+            ← BACK TO DASHBOARD
+        </button>
+
+
+        <button
+            class="btn btn-save"
+            onclick="saveDetails()"
+        >
+            SAVE AS DRAFT
+        </button>
+
+
+        <button
+            class="btn btn-next"
+            onclick="nextSection()"
+        >
+            SAVE & CONTINUE →
+        </button>
+
+    </div>
+
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<div class="footer">
+
+    KCST GST Learn © 2026
+    | GST Registration Learning Module
+
+</div>
+
+
+<script>
+
+
+/* ================= LOAD DATA ================= */
+
+window.onload = function(){
+
+    const savedName =
+        localStorage.getItem("gstLegalName");
+
+    const savedPAN =
+        localStorage.getItem("gstPAN");
+
+    const savedTRN =
+        localStorage.getItem("gstTRN");
+
+
+    if(savedName){
+
+        document.getElementById(
+            "legalName"
+        ).value = savedName;
+
+    }
+
+
+    if(savedPAN){
+
+        document.getElementById(
+            "panDisplay"
+        ).textContent = savedPAN;
+
+    }
+
+
+    if(savedTRN){
+
+        document.getElementById(
+            "trnDisplay"
+        ).textContent = savedTRN;
+
+    }
+
+};
+
+
+/* ================= NUMBERS ONLY ================= */
+
+function numbersOnly(input){
+
+    input.value =
+        input.value.replace(
+            /[^0-9]/g,
+            ""
+        );
+
+}
+
+
+/* ================= SAVE ================= */
+
+function saveDetails(){
+
+    const name =
+        document.getElementById(
+            "legalName"
+        ).value.trim();
+
+
+    const constitution =
+        document.getElementById(
+            "constitution"
+        ).value;
+
+
+    if(name === ""){
+
+        alert(
+            "Please enter the Legal Name of the Business."
+        );
+
+        return;
+
+    }
+
+
+    if(constitution === ""){
+
+        alert(
+            "Please select the Constitution of Business."
+        );
+
+        return;
+
+    }
+
+
+    localStorage.setItem(
+        "gstLegalName",
+        name
+    );
+
+
+    document.getElementById(
+        "savedMessage"
+    ).style.display =
+        "block";
+
+
+    setTimeout(function(){
+
+        document.getElementById(
+            "savedMessage"
+        ).style.display =
+            "none";
+
+    },3000);
+
+}
+
+
+/* ================= NEXT ================= */
+
+function nextSection(){
+
+    const name =
+        document.getElementById(
+            "legalName"
+        ).value.trim();
+
+
+    const constitution =
+        document.getElementById(
+            "constitution"
+        ).value;
+
+
+    const declaration =
+        document.getElementById(
+            "declaration"
+        ).checked;
+
+
+    if(name === ""){
+
+        alert(
+            "Please enter the Legal Name of the Business."
+        );
+
+        return;
+
+    }
+
+
+    if(constitution === ""){
+
+        alert(
+            "Please select the Constitution of Business."
+        );
+
+        return;
+
+    }
+
+
+    if(!declaration){
+
+        alert(
+            "Please accept the declaration before continuing."
+        );
+
+        return;
+
+    }
+
+
+    /* SAVE DATA */
+
+    localStorage.setItem(
+        "gstLegalName",
+        name
+    );
+
+
+    localStorage.setItem(
+        "gstConstitution",
+        constitution
+    );
+
+
+    /*
+       Next module will be Promoters /
+       Partners.
+    */
+
+    window.location.href =
+        "promoters.html";
+
+}
+
+
+/* ================= DASHBOARD ================= */
+
+function goDashboard(){
+
+    window.location.href =
+        "dashboard.html";
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,920 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>KCST GST Learn</title>
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-:root{
-    --primary:#2563eb;
-    --primary-dark:#1d4ed8;
-    --secondary:#7c3aed;
-    --dark:#0f172a;
-    --text:#475569;
-    --light:#f8fafc;
-    --white:#ffffff;
-    --border:#e2e8f0;
-}
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    color:var(--dark);
-    background:#fff;
-}
-
-/* ================= NAVBAR ================= */
-
-.navbar{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(255,255,255,.95);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--border);
-}
-
-.nav-container{
-    max-width:1200px;
-    margin:auto;
-    padding:14px 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    text-decoration:none;
-    color:var(--dark);
-}
-
-.logo-icon{
-    width:45px;
-    height:45px;
-    border-radius:12px;
-
-    background:linear-gradient(
-        135deg,
-        #2563eb,
-        #7c3aed
-    );
-
-    color:#fff;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:15px;
-    font-weight:bold;
-
-    box-shadow:
-        0 8px 20px rgba(37,99,235,.25);
-}
-
-.logo-text h2{
-    font-size:19px;
-    line-height:1.1;
-}
-
-.logo-text span{
-    font-size:11px;
-    color:#64748b;
-}
-
-/* ================= NAV BUTTONS ================= */
-
-.nav-buttons{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.nav-btn{
-    padding:10px 18px;
-    border-radius:10px;
-
-    font-size:14px;
-    font-weight:bold;
-
-    text-decoration:none;
-
-    transition:.25s;
-}
-
-.login-btn{
-    color:#334155;
-    border:1px solid var(--border);
-    background:#fff;
-}
-
-.login-btn:hover{
-    border-color:#94a3b8;
-    transform:translateY(-1px);
-}
-
-.register-btn{
-    color:#fff;
-    background:var(--primary);
-
-    box-shadow:
-        0 8px 20px rgba(37,99,235,.20);
-}
-
-.register-btn:hover{
-    background:var(--primary-dark);
-    transform:translateY(-1px);
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    min-height:calc(100vh - 74px);
-
-    display:flex;
-    align-items:center;
-
-    background:
-
-    radial-gradient(
-        circle at 10% 20%,
-        rgba(37,99,235,.13),
-        transparent 30%
-    ),
-
-    radial-gradient(
-        circle at 90% 10%,
-        rgba(124,58,237,.13),
-        transparent 30%
-    ),
-
-    linear-gradient(
-        180deg,
-        #f8fbff,
-        #ffffff
-    );
-
-    padding:60px 20px;
-}
-
-.hero-container{
-    width:100%;
-    max-width:1100px;
-    margin:auto;
-
-    display:grid;
-    grid-template-columns:1fr 1fr;
-
-    align-items:center;
-
-    gap:60px;
-}
-
-/* ================= HERO TEXT ================= */
-
-.hero-content{
-    max-width:600px;
-}
-
-.badge{
-    display:inline-flex;
-    align-items:center;
-    gap:7px;
-
-    padding:7px 13px;
-
-    border-radius:30px;
-
-    background:#eff6ff;
-    color:#2563eb;
-
-    font-size:12px;
-    font-weight:bold;
-
-    margin-bottom:20px;
-}
-
-.badge-dot{
-    width:7px;
-    height:7px;
-
-    background:#22c55e;
-
-    border-radius:50%;
-}
-
-.hero h1{
-    font-size:clamp(
-        42px,
-        6vw,
-        70px
-    );
-
-    line-height:1.05;
-
-    letter-spacing:-2.5px;
-
-    margin-bottom:22px;
-}
-
-.gradient-text{
-    background:
-        linear-gradient(
-            90deg,
-            #2563eb,
-            #7c3aed
-        );
-
-    -webkit-background-clip:text;
-    background-clip:text;
-
-    color:transparent;
-}
-
-.hero-description{
-    max-width:570px;
-
-    color:var(--text);
-
-    font-size:18px;
-
-    line-height:1.7;
-
-    margin-bottom:32px;
-}
-
-/* ================= HERO BUTTONS ================= */
-
-.hero-buttons{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-.hero-btn{
-    padding:14px 25px;
-
-    border-radius:12px;
-
-    font-size:14px;
-    font-weight:bold;
-
-    text-decoration:none;
-
-    transition:.25s;
-}
-
-.hero-register{
-    color:#fff;
-
-    background:var(--primary);
-
-    box-shadow:
-        0 12px 25px rgba(37,99,235,.25);
-}
-
-.hero-register:hover{
-    background:var(--primary-dark);
-
-    transform:translateY(-2px);
-}
-
-.hero-login{
-    color:#334155;
-
-    background:#fff;
-
-    border:1px solid var(--border);
-}
-
-.hero-login:hover{
-    border-color:#94a3b8;
-
-    transform:translateY(-2px);
-}
-
-/* ================= HERO VISUAL ================= */
-
-.hero-visual{
-    position:relative;
-
-    display:flex;
-    justify-content:center;
-}
-
-.dashboard-card{
-
-    width:100%;
-    max-width:430px;
-
-    background:#fff;
-
-    border:1px solid var(--border);
-
-    border-radius:25px;
-
-    padding:25px;
-
-    box-shadow:
-        0 30px 80px rgba(15,23,42,.12);
-
-    position:relative;
-
-    z-index:2;
-}
-
-.dashboard-header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    margin-bottom:25px;
-}
-
-.dashboard-title{
-    font-size:17px;
-    font-weight:bold;
-}
-
-.status{
-    font-size:11px;
-
-    color:#16a34a;
-
-    background:#f0fdf4;
-
-    padding:6px 10px;
-
-    border-radius:20px;
-
-    font-weight:bold;
-}
-
-/* ================= GST CARD ================= */
-
-.gst-card{
-
-    background:
-        linear-gradient(
-            135deg,
-            #eff6ff,
-            #f5f3ff
-        );
-
-    border-radius:18px;
-
-    padding:25px;
-
-    margin-bottom:18px;
-}
-
-.gst-label{
-    color:#64748b;
-
-    font-size:12px;
-
-    margin-bottom:6px;
-}
-
-.gst-title{
-    font-size:27px;
-
-    font-weight:bold;
-
-    margin-bottom:20px;
-}
-
-.gst-line{
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    padding:10px 0;
-
-    border-top:1px solid rgba(148,163,184,.2);
-
-    font-size:13px;
-}
-
-.gst-line strong{
-    color:#2563eb;
-}
-
-/* ================= PROGRESS ================= */
-
-.progress-section{
-    padding:18px;
-
-    border:1px solid var(--border);
-
-    border-radius:16px;
-}
-
-.progress-title{
-    display:flex;
-
-    justify-content:space-between;
-
-    font-size:12px;
-
-    font-weight:bold;
-
-    margin-bottom:10px;
-}
-
-.progress{
-    height:8px;
-
-    background:#e2e8f0;
-
-    border-radius:20px;
-
-    overflow:hidden;
-}
-
-.progress-bar{
-    width:65%;
-
-    height:100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            #2563eb,
-            #7c3aed
-        );
-
-    border-radius:20px;
-}
-
-/* ================= FLOATING CARDS ================= */
-
-.float-card{
-
-    position:absolute;
-
-    background:#fff;
-
-    border:1px solid var(--border);
-
-    box-shadow:
-        0 15px 35px rgba(15,23,42,.12);
-
-    padding:12px 15px;
-
-    border-radius:14px;
-
-    font-size:12px;
-
-    font-weight:bold;
-
-    z-index:3;
-}
-
-.float-one{
-    top:-20px;
-    right:-10px;
-}
-
-.float-two{
-    bottom:-20px;
-    left:-15px;
-}
-
-.float-icon{
-    display:inline-flex;
-
-    width:28px;
-    height:28px;
-
-    border-radius:8px;
-
-    align-items:center;
-    justify-content:center;
-
-    margin-right:7px;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-
-    background:#0f172a;
-
-    color:#94a3b8;
-
-    padding:22px 20px;
-
-    text-align:center;
-
-    font-size:12px;
-}
-
-.footer-brand{
-    color:#fff;
-
-    font-size:15px;
-
-    font-weight:bold;
-
-    margin-bottom:5px;
-}
-
-.footer-text{
-    margin-bottom:4px;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:850px){
-
-    .hero{
-        min-height:auto;
-
-        padding:
-            70px
-            20px
-            100px;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard – KCST GST Learn</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f1f5f9;
+      color: #111827;
+      font-size: 14px;
+      line-height: 1.5;
+      padding: 30px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
 
-    .hero-container{
-        grid-template-columns:1fr;
-
-        gap:70px;
+    /* main card */
+    .dashboard-card {
+      max-width: 920px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 22px 20px 18px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
-    .hero-content{
-        text-align:center;
-        margin:auto;
+    /* header row: Dashboard + English */
+    .dashboard-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+    .dashboard-head h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #0b1e33;
+      letter-spacing: -0.2px;
+    }
+    .lang-badge {
+      background: #eef2f6;
+      padding: 4px 18px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #1e293b;
+      border: 1px solid #dce1e8;
+      letter-spacing: 0.2px;
     }
 
-    .hero-description{
-        margin-left:auto;
-        margin-right:auto;
+    /* "My Saved Applications" – below Dashboard */
+    .saved-applications-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 14px;
+      margin-top: 6px;
+      letter-spacing: 0.2px;
     }
 
-    .hero-buttons{
-        justify-content:center;
+    /* table wrapper */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 0 -2px;
     }
 
-    .hero-visual{
-        margin:0 15px;
+    /* table with borders */
+    .dash-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      min-width: 700px;
+      border: 1px solid #dce1e8;
+      border-radius: 6px;
+      overflow: hidden;
     }
 
-}
-
-@media(max-width:520px){
-
-    .nav-container{
-        padding:12px 15px;
+    .dash-table th,
+    .dash-table td {
+      padding: 12px 14px;
+      border: 1px solid #dce1e8;
+      text-align: left;
+      vertical-align: middle;
+      background: #ffffff;
     }
 
-    .logo-icon{
-        width:40px;
-        height:40px;
+    /* header background */
+    .dash-table th {
+      background: #f8fafc;
+      color: #475569;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      border-bottom: 2px solid #d0d7e0;
     }
 
-    .logo-text h2{
-        font-size:17px;
+    .dash-table tbody tr:hover td {
+      background: #fafcff;
     }
 
-    .logo-text span{
-        display:none;
+    /* status badge */
+    .status-badge {
+      background: #e6f0ff;
+      color: #1e4a8a;
+      padding: 3px 14px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-block;
+      border: 1px solid #b8d0f0;
+      letter-spacing: 0.2px;
     }
 
-    .nav-buttons{
-        gap:6px;
+    /* ===== PENCIL BUTTON – BLUE BACKGROUND, WHITE PENCIL ===== */
+    .edit-btn {
+      background: #2563eb;
+      border: none;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      box-shadow: 0 1px 3px rgba(37, 99, 235, 0.3);
+      text-decoration: none;
+    }
+    .edit-btn:hover {
+      background: #1d4ed8;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.4);
+    }
+    .edit-btn:active {
+      transform: scale(0.92);
+    }
+    .edit-btn:focus-visible {
+      outline: 2px solid #1d4ed8;
+      outline-offset: 2px;
     }
 
-    .nav-btn{
-        padding:9px 12px;
-        font-size:12px;
+    /* pencil SVG – white stroke */
+    .pencil-svg {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      fill: none;
+      stroke: #ffffff;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke 0.2s;
+    }
+    .edit-btn:hover .pencil-svg {
+      stroke: #ffffff;
     }
 
-    .hero{
-        padding:
-            55px
-            16px
-            80px;
+    /* "You do not have any submitted applications" */
+    .no-applications {
+      color: #64748b;
+      font-size: 14px;
+      padding: 14px 14px 10px;
+      margin-top: 12px;
+      border: 1px solid #dce1e8;
+      border-radius: 6px;
+      background: #fafcff;
+      text-align: left;
+      font-weight: 400;
+      letter-spacing: 0.2px;
     }
 
-    .hero h1{
-        font-size:42px;
-
-        letter-spacing:-1.8px;
+    /* responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 16px 12px;
+      }
+      .dashboard-card {
+        padding: 16px 12px;
+      }
+      .dashboard-head h2 {
+        font-size: 18px;
+      }
+      .lang-badge {
+        font-size: 12px;
+        padding: 4px 14px;
+      }
+      .dash-table {
+        font-size: 12px;
+        min-width: 620px;
+      }
+      .dash-table th,
+      .dash-table td {
+        padding: 10px 10px;
+      }
+      .status-badge {
+        font-size: 11px;
+        padding: 2px 12px;
+      }
+      .pencil-svg {
+        width: 16px;
+        height: 16px;
+      }
+      .edit-btn {
+        padding: 5px 8px;
+      }
     }
 
-    .hero-description{
-        font-size:16px;
+    @media (max-width: 480px) {
+      .dashboard-card {
+        padding: 12px 8px;
+      }
+      .dash-table {
+        font-size: 11px;
+        min-width: 500px;
+      }
+      .dash-table th,
+      .dash-table td {
+        padding: 8px 8px;
+      }
+      .status-badge {
+        font-size: 10px;
+        padding: 2px 10px;
+      }
+      .pencil-svg {
+        width: 14px;
+        height: 14px;
+      }
+      .edit-btn {
+        padding: 4px 6px;
+      }
+      .no-applications {
+        font-size: 13px;
+        padding: 12px 10px;
+      }
+      .saved-applications-label {
+        font-size: 13px;
+      }
     }
-
-    .hero-buttons{
-        flex-direction:column;
-    }
-
-    .hero-btn{
-        width:100%;
-        text-align:center;
-    }
-
-    .dashboard-card{
-        padding:18px;
-    }
-
-    .float-one{
-        right:-5px;
-    }
-
-    .float-two{
-        left:-5px;
-    }
-
-}
-
-</style>
+  </style>
 </head>
-
 <body>
 
+  <div class="dashboard-card" role="region" aria-label="Dashboard">
 
-<!-- ================= NAVBAR ================= -->
-
-<header class="navbar">
-
-<div class="nav-container">
-
-    <a href="#" class="logo">
-
-        <div class="logo-icon">
-            GST
-        </div>
-
-        <div class="logo-text">
-
-            <h2>
-                KCST GST Learn
-            </h2>
-
-            <span>
-                Practical GST Learning Platform
-            </span>
-
-        </div>
-
-    </a>
-
-
-    <div class="nav-buttons">
-
-<a
-    href="login.html"
-    class="hero-btn hero-login"
->
-    🔐 Login
-</a>
-
-        <a
-            href="register.html"
-            class="nav-btn register-btn"
-        >
-            Register
-        </a>
-
+    <!-- HEADER: Dashboard + English -->
+    <div class="dashboard-head">
+      <h2>Dashboard</h2>
+      <span class="lang-badge">English</span>
     </div>
 
-</div>
-
-</header>
-
-
-<!-- ================= HERO ================= -->
-
-<section class="hero">
-
-<div class="hero-container">
-
-
-    <!-- HERO TEXT -->
-
-    <div class="hero-content">
-
-        <div class="badge">
-
-            <span class="badge-dot"></span>
-
-            Learn GST Filing Practically
-
-        </div>
-
-
-        <h1>
-
-            Learn GST.<br>
-
-            <span class="gradient-text">
-                Practice Filing.
-            </span>
-
-        </h1>
-
-
-        <p class="hero-description">
-
-            Learn GST concepts and practical GST filing
-            through a simple, student-friendly learning
-            platform designed for beginners and accounting students.
-
-        </p>
-
-
-        <div class="hero-buttons">
-
-            <a
-                href="register.html"
-                class="hero-btn hero-register"
-            >
-                🚀 Create Account
-            </a>
-
-
-            <a
-                href="1login.html"
-                class="hero-btn hero-login"
-            >
-                🔐 Login
-            </a>
-
-        </div>
-
+    <!-- "My Saved Applications" – below Dashboard -->
+    <div class="saved-applications-label">
+      My Saved Applications
     </div>
 
-
-    <!-- HERO VISUAL -->
-
-    <div class="hero-visual">
-
-
-        <div class="float-card float-one">
-
-            <span
-                class="float-icon"
-                style="background:#f0fdf4;"
-            >
-                ✓
-            </span>
-
-            Practical Learning
-
-        </div>
-
-
-        <div class="dashboard-card">
-
-
-            <div class="dashboard-header">
-
-                <div class="dashboard-title">
-                    KCST GST Learn
-                </div>
-
-                <div class="status">
-                    ● Online
-                </div>
-
-            </div>
-
-
-            <div class="gst-card">
-
-                <div class="gst-label">
-                    LEARNING PLATFORM
-                </div>
-
-                <div class="gst-title">
-                    GST India 🇮🇳
-                </div>
-
-
-                <div class="gst-line">
-
-                    <span>
-                        GST Basics
-                    </span>
-
-                    <strong>
-                        Learn
-                    </strong>
-
-                </div>
-
-
-                <div class="gst-line">
-
-                    <span>
-                        GST Returns
-                    </span>
-
-                    <strong>
-                        Practice
-                    </strong>
-
-                </div>
-
-
-                <div class="gst-line">
-
-                    <span>
-                        GST Filing
-                    </span>
-
-                    <strong>
-                        Master
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-            <div class="progress-section">
-
-                <div class="progress-title">
-
-                    <span>
-                        Learning Journey
-                    </span>
-
-                    <span>
-                        65%
-                    </span>
-
-                </div>
-
-
-                <div class="progress">
-
-                    <div class="progress-bar"></div>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-        <div class="float-card float-two">
-
-            <span
-                class="float-icon"
-                style="background:#eff6ff;"
-            >
-                📚
-            </span>
-
-            Learn Step-by-Step
-
-        </div>
-
-
+    <!-- TABLE -->
+    <div class="table-wrap">
+      <table class="dash-table" aria-label="My Saved Applications">
+        <thead>
+          <tr>
+            <th>Creation Date</th>
+            <th>Form No.</th>
+            <th>Form Description</th>
+            <th>Expiry Date</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>25/08/2026</td>
+            <td>GST REG-01</td>
+            <td>Application for New Registration</td>
+            <td>09/09/2026</td>
+            <td>
+              <span class="status-badge draft">Draft</span>
+            </td>
+            <td>
+              <!-- PENCIL BUTTON – navigates to partb.html -->
+              <a href="partb.html" class="edit-btn" aria-label="Edit application - Continue to Part B">
+                <svg class="pencil-svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 20h9" />
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                </svg>
+                <span style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+                  Edit - Continue to Part B
+                </span>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-</div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <div class="footer-brand">
-        KCST Media Technlogy
+    <!-- "You do not have any submitted applications" -->
+    <div class="no-applications">
+      You do not have any submitted applications
     </div>
 
-    <div class="footer-text">
-        Learn GST • Practice Filing • Build Confidence
-    </div>
+  </div>
 
-    <div>
-        © 2026 KCST GST Learn. All rights reserved.
-    </div>
-
-</footer>
-
+  <script>
+    console.log('Dashboard – pencil button now navigates to partb.html');
+  </script>
 
 </body>
 </html>
